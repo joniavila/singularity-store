@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+// import blackhole from './blackhole'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <canvas id="particle"></canvas>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
