@@ -1,24 +1,14 @@
-// import logo from './logo.svg';
 import './App.css';
-// import blackhole from './blackhole'
 
 function App() {
   return (
     <div className="App">
+      <div>
       <header className="App-header">
-      <canvas id="particle"></canvas>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <b></b>
       </header>
+      </div>
+      <h2>Proximamente: Singularity Store 2021</h2>
     </div>
   );
 }
