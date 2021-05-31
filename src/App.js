@@ -1,14 +1,13 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import DarkHole from './components/DarkHole/DarkHole'
+import NavBar from './components/NavBar/NavBar'
 
 function App() {
   return (
     <div className="App">
-      <div>
-      <header className="App-header">
-      <b></b>
-      </header>
-      </div>
-      <h2>Proximamente: Singularity Store 2021</h2>
+      <DarkHole />
+      <NavBar />
     </div>
   );
 }
