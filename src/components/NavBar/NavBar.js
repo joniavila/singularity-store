@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './navBar.css'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import CartWidget from '../CartWidget/CartWidget'
 
 class NavBar extends Component {
     render() {
@@ -11,7 +12,10 @@ class NavBar extends Component {
         }
         return (
             <Navbar bg="dark" variant="dark" expand="lg">
-                <Navbar.Brand href="#home">SINGULARITY STORE</Navbar.Brand>
+                <Navbar.Brand href="#home" as="h1">
+                <CartWidget />
+                SINGULARITY STORE
+                </Navbar.Brand>
                 <Nav className="mr-auto">
                     <p onClick={handleClick}>PRODUCTOS A</p>
                     <p onClick={handleClick}>PRODUCTOS B</p>
