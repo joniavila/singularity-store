@@ -16,11 +16,10 @@ class NavBar extends Component {
                 <CartWidget />
                 SINGULARITY STORE
                 </Navbar.Brand>
-                <Nav className="mr-auto">
-                    <p onClick={handleClick}>PRODUCTOS A</p>
-                    <p onClick={handleClick}>PRODUCTOS B</p>
-                    <p onClick={handleClick}>PRODUCTOS C</p>
-                </Nav>
+                <Nav as="button" onClick={handleClick}> PRODUCTO A</Nav>
+                <Nav as="button" onClick={handleClick}> PRODUCTO B</Nav>
+                <Nav as="button" onClick={handleClick}> PRODUCTO C</Nav>
+                <Nav as="button" onClick={handleClick}> PRODUCTO D</Nav>
             </Navbar>
         );
     }

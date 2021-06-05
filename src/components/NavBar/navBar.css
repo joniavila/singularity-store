@@ -1,5 +1,6 @@
-p{
+.navbar-nav{
     background-color: rgb(0, 0, 0);
+    color: blanchedalmond   ;
     display: inline;
     text-align: center;
     box-shadow: 1vmin 0 3vmin 0vmin #f50, inset -1vmin 0 3vmin 4vmin rgb(15 15 15), 4vmin 0 35vmin 0 #f60;
@@ -8,6 +9,7 @@ p{
     border-radius: 10%;
     margin-top: 15px;
 }
+
 
 .navbar-brand{
     font-size: 2rem;
