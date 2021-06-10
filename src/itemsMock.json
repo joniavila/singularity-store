@@ -1,0 +1,40 @@
+{
+ "items":
+    [
+        {
+            "id": 1,
+            "title": "AURICULARES",
+            "price": 100,
+            "stock":4,
+            "pictureUrl": "https://www.mylshop.com.ar/wp-content/uploads/2020/09/uWByZ2M3lwj0svay.png"
+        },
+        {
+            "id": 2,
+            "title": "GABINETE",
+            "price": 200,
+            "stock":5,
+            "pictureUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/007/635/products/15907370531-ff23235ad319b81fdd16085844086439-1024-1024.png"
+        },
+        {
+            "id": 3,
+            "title": "MONITOR",
+            "price": 300,
+            "stock":6,
+            "pictureUrl": "https://static.wixstatic.com/media/2cd43b_96df6dd2fb314d4ab372ae9be134432b~mv2_d_1760_1280_s_2.png/v1/fill/w_320,h_232,q_90/2cd43b_96df6dd2fb314d4ab372ae9be134432b~mv2_d_1760_1280_s_2.png"
+        },
+        {
+            "id": 4,
+            "title": "TECLADO",
+            "price": 400,
+            "stock":1,
+            "pictureUrl": "https://redragonla.com/wp-content/uploads/2021/03/K589RGB-SP-PNG-WEB-1-1.png"
+        },
+        {
+            "id": 5,
+            "title": "MOUSE",
+            "price": 500,
+            "stock":2,
+            "pictureUrl": "https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto:best,f_auto,dpr_auto/content/dam/gaming/en/non-braid/hyjal-g502-hero/g502-hero-intro-nb.png?v=1"
+        }
+    ]
+}
