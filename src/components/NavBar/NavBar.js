@@ -16,7 +16,7 @@ class NavBar extends Component {
                 <CartWidget />
                 SINGULARITY STORE
                 </Navbar.Brand>
-                <Nav as="button" onClick={handleClick}> PRODUCTO A</Nav>
+                <Nav as="button" href='/' onClick={handleClick}> PRODUCTO A</Nav>
                 <Nav as="button" onClick={handleClick}> PRODUCTO B</Nav>
                 <Nav as="button" onClick={handleClick}> PRODUCTO C</Nav>
                 <Nav as="button" onClick={handleClick}> PRODUCTO D</Nav>
