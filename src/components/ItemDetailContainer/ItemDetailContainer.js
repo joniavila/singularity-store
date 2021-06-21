@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import ItemsMock from '../../itemsMock.json'
-// import Card from 'react-bootstrap/Card'
-// import Form from 'react-bootstrap/Form'
-// import ItemCount from '../ItemCount/ItemCount';
-// import { Image } from 'react-bootstrap';
+import { useParams } from 'react-router';
 
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
     const [item,setItem] = useState({})
+    const {id} = useParams()
     const obtener = new Promise((resolve,reject) => {
         setTimeout(() => {
             resolve(ItemsMock);
@@ -16,8 +14,7 @@ const ItemDetailContainer = () => {
     });
     obtener.then( data => {
         if(data){
-            setItem(data.items[0])
-            console.log('Items cargados con exito')
+            setItem(data.items[id])
         }
     }).catch((e)=>{
         console.log(e)

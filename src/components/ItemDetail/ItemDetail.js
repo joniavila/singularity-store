@@ -9,11 +9,10 @@ const ItemDetail = ({item}) => {
         console.log('se agrego el producto')
         alert('Se agrego el producto al carrito')
     }
-    console.log(item)
     return (
         <div style={{display: 'flex' }}>
-            <Image src={item.pictureUrl} fluid style={{width:'50%',height:'90%'}}/>
-            <Card style={{height:'90%' }} bg='dark'>
+            <Image src={`${process.env.PUBLIC_URL}/${item.pictureUrl}`} fluid={true} />
+            <Card style={{height:'100%' }} bg='dark'>
                 <Card.Body>
                     <Card.Title as='h1'>{item.title}</Card.Title>
                     <Card.Title>{item.caracteristicas}</Card.Title>

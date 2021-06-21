@@ -2,40 +2,54 @@
  "items":
     [
         {
-            "id": 1,
+            "id": 0,
             "title": "AURICULARES",
             "caracteristicas":"Sensibilidad 102dB+/-3dB at 1KHz | Frecuencia de respuesta 20Hz - 20KHz  Impedancia 32 ohm | Longitud del cable 1.8 metros | Conector doble jack 3.5 mm plug | Auriculares con banda de cabeza con micrófono que anula los ruidos.Auriculares con micrófono estéreo con sujeción de cabeza.Micrófono con cancelación de ruido.Control de volumen en línea. Almohadillas de cuero sintéticoMicrófono en línea con función de enmudecemiento.Es ideal para MSN/ SKYPE/ reproductor MP3.",
             "price": 100,
+            "idCategory":1,
+            "category": "VIDEO/AUDIO",
             "stock":4,
-            "pictureUrl": "https://www.mylshop.com.ar/wp-content/uploads/2020/09/uWByZ2M3lwj0svay.png"
+            "pictureUrl": "assets/auriculares.jpg"
+        },
+        {
+            "id": 1,
+            "title": "GABINETE",
+            "caracteristicas":"Gabinete mid tower de alto rendimiento con un diseño de panel frontal audaz y elegante para brindar un elemento de potencia a su configuración de juego. El diseño del panel frontal de malla ofrece un flujo de aire y una ventilación mejorados al tiempo que permite ver su ventilador LED frontal. Viene equipado con ventiladores FRGB de 12 cm con iluminación RGB fija para crear un efecto de iluminación estático.",
+            "price": 200,
+            "idCategory":2,
+            "category": "COMPONENTES PC",
+            "stock":5,
+            "pictureUrl": "assets/gabinete.jpg"
         },
         {
             "id": 2,
-            "title": "GABINETE",
-            "price": 200,
-            "stock":5,
-            "pictureUrl": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/007/635/products/15907370531-ff23235ad319b81fdd16085844086439-1024-1024.png"
+            "title": "MONITOR",
+            "caracteristicas":"LCD TFT | Tipo de retroiluminación Sistema W-LED | Tamaño de panel 18,5 pulg / 47 cm | Área de visualización efectiva 409,8 (H) x 230,4 (V) | Relación de aspecto 16:9 | Resolución óptima 1366 x 768 a 60 Hz | Tiempo de respuesta (estándar) 5 ms | Brillo 200 cd/m² | Relación de contraste (estándar) 700:1 | Píxeles 0,30 x 0,30 mm | Ángulo de visualización 90º (alto) / 65º (ancho)a C/R > 10 | Colores de pantalla 16,7 M | Frecuencia de escaneo 30-83 kHz (horizontal)/56-76 Hz (vertical) | Señal de entrada VGA (analógica) | HDMI (digital, HDCP) | Entrada de sincronización Sincronización separada",
+            "price": 300,
+            "idCategory":1,
+            "category": "VIDEO/AUDIO",
+            "stock":6,
+            "pictureUrl": "assets/monitor.jpg"
         },
         {
             "id": 3,
-            "title": "MONITOR",
-            "price": 300,
-            "stock":6,
-            "pictureUrl": "https://static.wixstatic.com/media/2cd43b_96df6dd2fb314d4ab372ae9be134432b~mv2_d_1760_1280_s_2.png/v1/fill/w_320,h_232,q_90/2cd43b_96df6dd2fb314d4ab372ae9be134432b~mv2_d_1760_1280_s_2.png"
+            "title": "TECLADO",
+            "caracteristicas":"Todas las prestaciones que hacen la diferencia, en un teclado de membrana cómodo y silencioso a la hora de jugar o trabajar.Construido en plástico ABS resistente, sus switches de membrana están encapsulados y sus keycaps son de inyección de doble disparo lo que les da una durabilidad excelente, sin olvidarnos del cable mallado resistente con ficha bañada para mejorar la transmisión.",
+            "price": 400,
+            "idCategory":3,
+            "category": "PERIFERICOS",
+            "stock":1,
+            "pictureUrl": "assets/teclado.jpg"
         },
         {
             "id": 4,
-            "title": "TECLADO",
-            "price": 400,
-            "stock":1,
-            "pictureUrl": "https://redragonla.com/wp-content/uploads/2021/03/K589RGB-SP-PNG-WEB-1-1.png"
-        },
-        {
-            "id": 5,
             "title": "MOUSE",
+            "caracteristicas":"Tipo de conexión cableada| Longitud del cable 130 cm| USB versión 2.0| Tipo de conector USB-A| DPI 1200| Tecnología de sensor: óptico| Tipo de agarre: palma| Cantidad de botones 3| Superficie adecuada: plana no reflectante| Uso ambidiestro | Rueda de desplazamiento",
             "price": 500,
+            "idCategory":3,
+            "category": "PERIFERICOS",
             "stock":2,
-            "pictureUrl": "https://resource.logitechg.com/w_1800,c_limit,f_auto,q_auto:best,f_auto,dpr_auto/content/dam/gaming/en/non-braid/hyjal-g502-hero/g502-hero-intro-nb.png?v=1"
+            "pictureUrl": "assets/mouse.jpg"
         }
     ]
 }
