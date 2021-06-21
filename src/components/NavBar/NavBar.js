@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav'
 import CartWidget from '../CartWidget/CartWidget'
 import {Link}  from 'react-router-dom';
 import ItemsMock from '../../itemsMock.json'
-// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 
 function NavBar() {
     const [categories , setCategories] = useState([])
@@ -33,9 +33,9 @@ function NavBar() {
                 </Navbar.Brand>  
                 </Link>
                 {categories.map( item => <Nav as="button" key={item.id}><Link to={`/categories/${item.id}`}>{item.name}</Link></Nav> )}
-                <NavBar>
-                {/* <ShoppingCartIcon /> */}
-                </NavBar>
+                <Nav style={{float:'rigth'}}>
+                <ShoppingCartIcon />
+                </Nav>
             </Navbar>
         );
     }
