@@ -1,24 +1,23 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
-import ItemCount from '../ItemCount/ItemCount'
 import Image from 'react-bootstrap/Image'
+import { Link } from 'react-router-dom';
+// import ItemCount from '../ItemCount/ItemCount';
 
 function Item({item}) {
-    function onAdd () {
-        console.log('se agrego el producto')
-        alert('Se agrego el producto al carrito')
-    }
-    console.log(process.env.PUBLIC_URL)
     return (
         <div>
-            <Card style={{ width: '18rem', flex: 1}} bg='dark' border="danger">
+            <Card style={{ width: '18rem', flex: 1}} bg='dark' border="warning">
+            <Link to={`/item/${item.id}`} > 
                 <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/${item.pictureUrl}`} as={Image} fluid={true} />
-                <Card.Body>
+                <Card.Body style={{color: 'blanchedalmond'}}>
                     <Card.Title>{item.title}</Card.Title>
+                    <Form.Label>CATEGORIA: {item.category}</Form.Label> <br/>
                     <Form.Label>PRECIO: {item.stock}</Form.Label>
-                    <ItemCount stock={item.stock} initial='0' onAdd={onAdd} />  
                 </Card.Body>
+            </Link>
+            <br />
             </Card>
         </div>
     );

@@ -17,7 +17,6 @@ function ItemListContainer() {
             obtener.then( res => {
                 if(id !== undefined){
                     for (var item of res.items){
-                        console.log(item)
                         if(item.idCategory === parseInt(id)){
                             productos.push(item)
                         }

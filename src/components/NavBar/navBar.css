@@ -17,4 +17,10 @@
 .navbar-brand{
     font-size: 2rem;
     display: flex;
+    color: blanchedalmond;
+}
+
+.nav-link{
+    color: blanchedalmond;
+    padding:0%
 }

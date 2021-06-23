@@ -25,16 +25,18 @@ function NavBar() {
         setCategories(categorias)
     },[])
         return (
-            <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar bg="dark" variant="" expand="lg">
                 <Link to="/">
                 <Navbar.Brand href="#home" as="h1">
                 <CartWidget />
                 SINGULARITY STORE
                 </Navbar.Brand>  
                 </Link>
-                {categories.map( item => <Nav as="button" key={item.id}><Link to={`/categories/${item.id}`}>{item.name}</Link></Nav> )}
-                <Nav style={{float:'rigth'}}>
-                <ShoppingCartIcon />
+                {categories.map( item => <Nav as="button" key={item.id} ><Nav.Link href={`/categories/${item.id}`}> {item.name}</Nav.Link> </Nav> )}
+                <Nav>
+                    <Nav.Link href='/cart'>
+                        <ShoppingCartIcon/>
+                    </Nav.Link>
                 </Nav>
             </Navbar>
         );
