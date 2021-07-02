@@ -1,14 +1,26 @@
-import React ,{useState}from 'react';
+import React ,{useState, useContext}from 'react';
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import ItemCount from '../ItemCount/ItemCount';
 import { Button, Image } from 'react-bootstrap';
+import CartContext from '../Context/CartContext';
 
 const ItemDetail = ({item}) => {
     const [evento, setEvento] = useState(true)
+    const { addToCache } = useContext(CartContext);
     function onAdd (cantidad) {
-        console.log(evento)
-        console.log(cantidad)
+        let productoAagregar = {
+            caracteristicas: item.caracteristicas,
+            category: item.category,
+            id: item.id,
+            idCategory: item.idCategory,
+            pictureUrl: item.pictureUrl,
+            price: item.price,
+            stock: item.stock,
+            title: item.title,
+            cantidad: cantidad
+        }
+        addToCache(productoAagregar)
         setEvento(false)
     }
     return (
@@ -21,6 +33,7 @@ const ItemDetail = ({item}) => {
                     <Form.Label as='h2'>STOCK: {item.stock}</Form.Label>
                     { evento ? (<ItemCount stock={item.stock} initial='0' onAdd={onAdd} />) :
                     (<Button href='/cart'> Terminar Compra</Button>)}
+                    <Button onClick={()=>{setEvento(true)}}> CAMBIAR</Button>
                 </Card.Body>
             </Card>
         </div>

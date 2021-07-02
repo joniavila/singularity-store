@@ -41,7 +41,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
                         </Button>
                     </InputGroup.Append>
                 </InputGroup>
-                <Button onClick={onAdd} disabled={contador===0}>
+                <Button onClick={()=>{onAdd(contador)}} disabled={contador===0}>
                         AGREGAR
                 </Button>
                 <Toast show={show} onClose={() => setShow(false)} delay={3000} autohide>
