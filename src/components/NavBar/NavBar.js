@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {useState} from 'react'
 import './navBar.css'
 import Navbar from 'react-bootstrap/Navbar'
@@ -7,9 +7,13 @@ import CartWidget from '../CartWidget/CartWidget'
 import {Link}  from 'react-router-dom';
 import ItemsMock from '../../itemsMock.json'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import CartContext from '../Context/CartContext';
 
 function NavBar() {
     const [categories , setCategories] = useState([])
+    const [carrito , setCarrito] = useState(null)
+    const {cacheSize} = useContext(CartContext)
+
     useEffect(()=>{
         let data = ItemsMock.items
         let categorias = [] 
@@ -23,7 +27,9 @@ function NavBar() {
             }
         }
         setCategories(categorias)
-    },[])
+        let cantidad = cacheSize
+        setCarrito(cantidad)
+    },[cacheSize])
         return (
             <Navbar bg="dark" variant="" expand="lg">
                 <Link to="/">
@@ -32,12 +38,15 @@ function NavBar() {
                 SINGULARITY STORE
                 </Navbar.Brand>  
                 </Link>
-                {categories.map( item => <Nav as="button" key={item.id} ><Nav.Link href={`/categories/${item.id}`}> {item.name}</Nav.Link> </Nav> )}
-                <Nav>
-                    <Nav.Link href='/cart'>
-                        <ShoppingCartIcon/>
-                    </Nav.Link>
-                </Nav>
+                {categories.map( item => <Link key={item.id} to={`/categories/${item.id}`}><Nav as="button" >{item.name}</Nav> </Link>)}
+                 
+                <Link to='/cart'>
+                    <Nav as="button">
+                        {carrito ? carrito: '0'}
+                        <ShoppingCartIcon />
+                    </Nav>
+                </Link>
+                
             </Navbar>
         );
     }

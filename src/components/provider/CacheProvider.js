@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import CartContext from '../Context/CartContext';
 
-export default function CacheProvider({ defaultValue = [], children }) {
-  const [cache, setCache] = useState(defaultValue);
+export default function CacheProvider({ children }) {
+  const [cache, setCache] = useState([]);
 
   function getAll(){
       return cache
   }
 
   function getFromCache(id) {
-    return cache.find(x => x.item.id === id);
+    return cache.find(x => x.id === id);
   }
 
   function isInCache({ id }) {
     return id === undefined ? undefined : getFromCache(id) !== undefined;
+  }
+
+  function guardarEnLocal(){
+    localStorage.setItem('productosAgregados',JSON.stringify(getAll()))
   }
 
   function addToCache(obj,cant) {
@@ -22,32 +26,26 @@ export default function CacheProvider({ defaultValue = [], children }) {
       console.log(getAll())
       return;
     }
-    let producto = {
-      item: obj,
+    let arrayProductos = [...cache, {
+      id: obj.id,
+      title: obj.title,
+      price: obj.price,
+      category:obj.category,
       cantidad: cant
-    }
-    console.log('Elemento agregado!');
-    setCache([...cache, producto])
-    // localStorage.setItem('productos',cache)
+    }]
+    setCache(arrayProductos,guardarEnLocal())
   }
 
   function removeItem(obj){
-    if (isInCache(obj)) {
-        alert('El elemento que desea eliminar no se encuentra en el carrito: ',obj);
-        return;
-    }
-    let productos = cache.filter( e => e !== obj.id)
+    let productos = cache.filter( e => e.id !== obj.id)
     setCache([...productos])
     return 'Elemento eliminado'
   }
 
   function clearCache(){
-      setCache(defaultValue)
+      setCache([])
       return 'Cache eliminada'
   }
-
-
-
   return (
     <CartContext.Provider
       value={{ cache, addToCache, isInCache, getAll,removeItem,clearCache, cacheSize: cache.length }}
