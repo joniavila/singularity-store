@@ -1,13 +1,14 @@
-import React, { useEffect,useContext } from 'react';
-import CartContext from '../Context/CartContext';
+import React from 'react';
+// import CartContext from '../Context/CartContext';
 
 const Cart = () => {
     // const [productos,setProductos] = useState()
-    const { getAll } = useContext(CartContext);
-    useEffect(()=>{
-       let productos = getAll()
-       console.log(productos)
-    })
+    // // const { getAll } = useContext(CartContext);
+    // useEffect(()=>{
+    //     // let productosEnLocal = localStorage.getItem('productos')
+    //     // setProductos(productosEnLocal)
+    //     // console.log(productos)
+    // },[productos])
     return (
         <div>
         </div>

@@ -9,18 +9,7 @@ const ItemDetail = ({item}) => {
     const [evento, setEvento] = useState(true)
     const { addToCache } = useContext(CartContext);
     function onAdd (cantidad) {
-        let productoAagregar = {
-            caracteristicas: item.caracteristicas,
-            category: item.category,
-            id: item.id,
-            idCategory: item.idCategory,
-            pictureUrl: item.pictureUrl,
-            price: item.price,
-            stock: item.stock,
-            title: item.title,
-            cantidad: cantidad
-        }
-        addToCache(productoAagregar)
+        addToCache(item,cantidad)
         setEvento(false)
     }
     return (

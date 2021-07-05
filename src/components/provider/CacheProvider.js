@@ -9,21 +9,26 @@ export default function CacheProvider({ defaultValue = [], children }) {
   }
 
   function getFromCache(id) {
-    return cache.find(x => x.id === id);
+    return cache.find(x => x.item.id === id);
   }
 
   function isInCache({ id }) {
     return id === undefined ? undefined : getFromCache(id) !== undefined;
   }
 
-  function addToCache(obj) {
+  function addToCache(obj,cant) {
     if (isInCache(obj)) {
       alert('El elemento que desea agregar ya se encuentra en el carrito: ',obj);
+      console.log(getAll())
       return;
     }
-    setCache([...cache, obj])
-    console.log(cache)
+    let producto = {
+      item: obj,
+      cantidad: cant
+    }
     console.log('Elemento agregado!');
+    setCache([...cache, producto])
+    // localStorage.setItem('productos',cache)
   }
 
   function removeItem(obj){
