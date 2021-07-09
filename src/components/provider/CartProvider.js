@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CartContext from '../Context/CartContext';
 
-export default function CacheProvider({ children }) {
+export default function CartProvider({ children }) {
   const [cache, setCache] = useState([]);
 
   function getAll(){
@@ -14,10 +14,6 @@ export default function CacheProvider({ children }) {
 
   function isInCache({ id }) {
     return id === undefined ? undefined : getFromCache(id) !== undefined;
-  }
-
-  function guardarEnLocal(){
-    localStorage.setItem('productosAgregados',JSON.stringify(getAll()))
   }
 
   function addToCache(obj,cant) {
@@ -33,7 +29,7 @@ export default function CacheProvider({ children }) {
       category:obj.category,
       cantidad: cant
     }]
-    setCache(arrayProductos,guardarEnLocal())
+    setCache(arrayProductos)
   }
 
   function removeItem(obj){

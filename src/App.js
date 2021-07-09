@@ -7,14 +7,14 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Switch } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
-import CacheProvider from './components/provider/CacheProvider';
+import CartProvider from './components/provider/CartProvider';
 
 function App() {
   return (
     <div className="App">
       <DarkHole />
       <BrowserRouter>
-      <CacheProvider>
+      <CartProvider>
 
       <NavBar />
       <Switch>
@@ -35,7 +35,7 @@ function App() {
       </Route>
 
       </Switch>
-      </CacheProvider>
+      </CartProvider>
       </BrowserRouter>
     </div>
   );
