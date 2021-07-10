@@ -1,6 +1,6 @@
 import React ,{useState, useContext}from 'react';
 import Card from 'react-bootstrap/Card'
-import Form from 'react-bootstrap/Form'
+// import Form from 'react-bootstrap/Form'
 import ItemCount from '../ItemCount/ItemCount';
 import { Button, Image } from 'react-bootstrap';
 import CartContext from '../Context/CartContext';
@@ -20,7 +20,7 @@ const ItemDetail = ({item}) => {
                 <Card.Body>
                     <Card.Title as='h1'>{item.title}</Card.Title>
                     <Card.Title>{item.caracteristicas}</Card.Title>
-                    <Form.Label as='h2'>STOCK: {item.stock}</Form.Label>
+                    <Card.Title as='h3'>PRECIO: {item.price}</Card.Title>
                     { evento ? (<ItemCount stock={item.stock} initial='0' onAdd={onAdd} />) :
                     ( 
                     <Link to='/cart' > 

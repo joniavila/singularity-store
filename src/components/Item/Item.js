@@ -14,10 +14,10 @@ function Item({item}) {
                 <Card.Body style={{color: 'blanchedalmond'}}>
                     <Card.Title>{item.title}</Card.Title>
                     <Form.Label>CATEGORIA: {item.category}</Form.Label> <br/>
-                    <Form.Label>PRECIO: {item.stock}</Form.Label>
+                    <Form.Label>PRECIO: {item.price}</Form.Label><br/>
+                    <Form.Label>STOCK: {item.stock}</Form.Label>
                 </Card.Body>
             </Link>
-            <br />
             </Card>
         </div>
     );
