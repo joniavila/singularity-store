@@ -5,9 +5,10 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import CartWidget from '../CartWidget/CartWidget'
 import {Link}  from 'react-router-dom';
-import ItemsMock from '../../itemsMock.json'
+// import ItemsMock from '../../itemsMock.json'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import CartContext from '../Context/CartContext';
+import {getFirestore} from '../../firebase/index'
 
 function NavBar() {
     const [categories , setCategories] = useState([])
@@ -15,18 +16,15 @@ function NavBar() {
     const {cacheSize} = useContext(CartContext)
 
     useEffect(()=>{
-        let data = ItemsMock.items
-        let categorias = [] 
-        for (var item of data){
-            // eslint-disable-next-line no-loop-func
-            if(!categorias.some(e => e.id === item.idCategory))
-                {
-                categorias.push(
-                    {id:item.idCategory,
-                    name:item.category})
+        const db = getFirestore();
+        const itemCollection = db.collection('categories');
+        itemCollection.get().then(querySnapshot => {
+            if (querySnapshot.size === 0) {
+                console.log('No results');
             }
-        }
-        setCategories(categorias)
+                setCategories(querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+            });
+
         let cantidad = cacheSize
         setCarrito(cantidad)
     },[cacheSize])
@@ -38,7 +36,7 @@ function NavBar() {
                 SINGULARITY STORE
                 </Navbar.Brand>  
                 </Link>
-                {categories.map( item => <Link key={item.id} to={`/categories/${item.id}`}><Nav as="button" >{item.name}</Nav> </Link>)}
+                {categories.map( item => <Link key={item.id} to={`/categories/${item.id}`}><Nav as="button" >{item.category}</Nav> </Link>)}
                  
                 <Link to='/cart'>
                     <Nav as="button">

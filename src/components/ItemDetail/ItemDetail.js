@@ -1,6 +1,4 @@
 import React ,{useState, useContext}from 'react';
-import Card from 'react-bootstrap/Card'
-// import Form from 'react-bootstrap/Form'
 import ItemCount from '../ItemCount/ItemCount';
 import { Button, Image } from 'react-bootstrap';
 import CartContext from '../Context/CartContext';
@@ -15,23 +13,30 @@ const ItemDetail = ({item}) => {
     }
     return (
         <div style={{display: 'flex', margin:'20px' }}>
-            <Image src={`${process.env.PUBLIC_URL}/${item.pictureUrl}`} thumbnail fluid={true} />
-            <Card style={{height:'100%' }} bg='dark'>
-                <Card.Body>
-                    <Card.Title as='h1'>{item.title}</Card.Title>
-                    <Card.Title>{item.caracteristicas}</Card.Title>
-                    <Card.Title as='h3'>PRECIO: {item.price}</Card.Title>
-                    { evento ? (<ItemCount stock={item.stock} initial='0' onAdd={onAdd} />) :
-                    ( 
-                    <Link to='/cart' > 
-                        <Button>
-                            Terminar Compra
-                        </Button>
-                    </Link>
-                    )}
-                    <Button onClick={()=>{setEvento(true)}}> CAMBIAR</Button>
-                </Card.Body>
-            </Card>
+        <div>
+            <Image src={`${process.env.PUBLIC_URL}/${item.pictureUrl}`} thumbnail fluid />
+                
+        </div>
+            <div style={{height:'100%',display:'' }} bg=''>
+                    <h1>{item.title}</h1>
+                    <ul>
+                    {item.caracteristicas.split('|').map(e => {
+                        return <li style={{textAlign: 'initial'}}>{e}</li>
+                    })}
+                    </ul>
+                    {/* <p>{item.caracteristicas}</p> */}
+                    <h3>PRECIO: {item.price}</h3>
+                    <div style={{margin: '30px', textAlignLast: 'center'}}>
+                        { evento ? (<ItemCount  stock={item.stock} initial='0' onAdd={onAdd} />) :
+                        ( 
+                            <Link to='/cart' > 
+                            <Button>
+                                Terminar Compra
+                            </Button>
+                        </Link>
+                        )}
+                    </div>
+            </div>
         </div>
     );
 };

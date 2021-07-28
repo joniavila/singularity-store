@@ -26,7 +26,7 @@ const ItemCount = ({stock,initial,onAdd}) => {
             }
         }
         return (
-            <div>
+            <div stlye={{textAlignLast: 'center'}}>
                 <FormControl value={"STOCK DISPONIBLE: "+stock} readOnly/> 
                 <InputGroup className="mb-3">
                     <InputGroup.Prepend>
@@ -44,6 +44,8 @@ const ItemCount = ({stock,initial,onAdd}) => {
                 <Button onClick={()=>{onAdd(contador)}} disabled={contador===0}>
                         AGREGAR
                 </Button>
+
+                {/* esto deberia pasarlo a otro componente */}
                 <Toast show={show} onClose={() => setShow(false)} delay={3000} autohide>
                     <Toast.Header>ERROR</Toast.Header>
                     <Toast.Body> No puede agregar mas productos debido a que supera el Stock Disponible</Toast.Body>
