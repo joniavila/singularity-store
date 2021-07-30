@@ -1,0 +1,11 @@
+.input-group-text{
+    color: blanchedalmond;
+    background-color: #343a40;
+    margin-bottom: 5px;
+    border-color: #f80;
+}
+
+.input-group{
+    width:50%;
+    margin:auto;
+}
