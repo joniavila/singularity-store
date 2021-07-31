@@ -9,7 +9,7 @@ Este proyecto contiene informacion tanto en castellano/español como en ingles
 
 ## VISTA PREVIA
 
-![image](https://github.com/joniavila/singularity-store/blob/master/public/assets/Animation.gif)
+![image](https://github.com/joniavila/singularity-store/blob/master/public/assets/Animation-2.gif)
 
 
 ## Available Scripts
